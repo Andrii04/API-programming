@@ -8,7 +8,7 @@ print("The server is ready to receive!")
 while True:
     connectionSocket, addr = serverSocket.accept() #accepts client knocking on welcoming door, and creates a new socket for that specific client: connectionSocket, and now a TCP connection is established between connectionSocket and clientSocket.
     sentence = connectionSocket.recv(1024).decode()
-    sentence += "\nSentence modified!"
+    sentence += "\n Sentence made upperCase!"
     capitalizedSentence = sentence.upper()
     connectionSocket.send(capitalizedSentence.encode())
     connectionSocket.close() #we close the specific connection after we're done with the client, but the server still continues to accept other clients
